@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wave_config>
+   <wave_state>
+   </wave_state>
+   <db_ref_list>
+      <db_ref path="comb_tb_behav.wdb" id="1">
+         <top_modules>
+            <top_module name="comb_tb" />
+         </top_modules>
+      </db_ref>
+   </db_ref_list>
+   <zoom_setting>
+      <ZoomStartTime time="29,850.874403 us"></ZoomStartTime>
+      <ZoomEndTime time="30,735.771066 us"></ZoomEndTime>
+      <Cursor1Time time="110,437.920000 us"></Cursor1Time>
+   </zoom_setting>
+   <column_width_setting>
+      <NameColumnWidth column_width="202"></NameColumnWidth>
+      <ValueColumnWidth column_width="76"></ValueColumnWidth>
+   </column_width_setting>
+   <WVObjectSize size="14" />
+   <wvobject fp_name="/comb_tb/r_CLK100MHZ" type="logic">
+      <obj_property name="ElementShortName">r_CLK100MHZ</obj_property>
+      <obj_property name="ObjectShortName">r_CLK100MHZ</obj_property>
+   </wvobject>
+   <wvobject fp_name="/comb_tb/r_btn" type="array">
+      <obj_property name="ElementShortName">r_btn[3:0]</obj_property>
+      <obj_property name="ObjectShortName">r_btn[3:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/comb_tb/r_sw" type="array">
+      <obj_property name="ElementShortName">r_sw[3:0]</obj_property>
+      <obj_property name="ObjectShortName">r_sw[3:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/comb_tb/r_led0_b" type="logic">
+      <obj_property name="ElementShortName">r_led0_b</obj_property>
+      <obj_property name="ObjectShortName">r_led0_b</obj_property>
+   </wvobject>
+   <wvobject fp_name="/comb_tb/r_led0_g" type="logic">
+      <obj_property name="ElementShortName">r_led0_g</obj_property>
+      <obj_property name="ObjectShortName">r_led0_g</obj_property>
+   </wvobject>
+   <wvobject fp_name="/comb_tb/r_led0_r" type="logic">
+      <obj_property name="ElementShortName">r_led0_r</obj_property>
+      <obj_property name="ObjectShortName">r_led0_r</obj_property>
+   </wvobject>
+   <wvobject fp_name="/comb_tb/r_led" type="array">
+      <obj_property name="ElementShortName">r_led[3:0]</obj_property>
+      <obj_property name="ObjectShortName">r_led[3:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/comb_tb/r_uart_txd_in" type="logic">
+      <obj_property name="ElementShortName">r_uart_txd_in</obj_property>
+      <obj_property name="ObjectShortName">r_uart_txd_in</obj_property>
+   </wvobject>
+   <wvobject fp_name="/comb_tb/MAIN_INST/r_uart_counter" type="other">
+      <obj_property name="ElementShortName">r_uart_counter</obj_property>
+      <obj_property name="ObjectShortName">r_uart_counter</obj_property>
+   </wvobject>
+   <wvobject fp_name="/comb_tb/MAIN_INST/r_TX_DV" type="logic">
+      <obj_property name="ElementShortName">r_TX_DV</obj_property>
+      <obj_property name="ObjectShortName">r_TX_DV</obj_property>
+   </wvobject>
+   <wvobject fp_name="/comb_tb/MAIN_INST/r_TX_STRING_lenght" type="array">
+      <obj_property name="ElementShortName">r_TX_STRING_lenght[7:0]</obj_property>
+      <obj_property name="ObjectShortName">r_TX_STRING_lenght[7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/comb_tb/MAIN_INST/r_TX_BYTE" type="array">
+      <obj_property name="ElementShortName">r_TX_BYTE[7:0]</obj_property>
+      <obj_property name="ObjectShortName">r_TX_BYTE[7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/comb_tb/MAIN_INST/r_TX_Byte_Index" type="other">
+      <obj_property name="ElementShortName">r_TX_Byte_Index</obj_property>
+      <obj_property name="ObjectShortName">r_TX_Byte_Index</obj_property>
+   </wvobject>
+   <wvobject fp_name="/comb_tb/MAIN_INST/w_TX_STRING" type="array">
+      <obj_property name="ElementShortName">w_TX_STRING[63:0][7:0]</obj_property>
+      <obj_property name="ObjectShortName">w_TX_STRING[63:0][7:0]</obj_property>
+   </wvobject>
+</wave_config>

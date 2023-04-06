@@ -1,7 +1,7 @@
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
 ------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2022.2 (win64) Build 3671981 Fri Oct 14 05:00:03 MDT 2022
-| Date         : Wed Mar 22 10:58:37 2023
+| Date         : Mon Mar 27 16:45:38 2023
 | Host         : SE-5CG2262K37 running 64-bit major release  (build 9200)
 | Command      : report_control_sets -verbose -file main_control_sets_placed.rpt
 | Design       : main
@@ -23,11 +23,11 @@ Table of Contents
 +----------------------------------------------------------+-------+
 |                          Status                          | Count |
 +----------------------------------------------------------+-------+
-| Total control sets                                       |    12 |
-|    Minimum number of control sets                        |    12 |
+| Total control sets                                       |    16 |
+|    Minimum number of control sets                        |    16 |
 |    Addition due to synthesis replication                 |     0 |
 |    Addition due to physical synthesis replication        |     0 |
-| Unused register locations in slices containing registers |    59 |
+| Unused register locations in slices containing registers |    71 |
 +----------------------------------------------------------+-------+
 * Control sets can be merged at opt_design using control_set_merge or merge_equivalent_drivers
 ** Run report_qor_suggestions for automated merging and remapping suggestions
@@ -39,15 +39,15 @@ Table of Contents
 +--------------------+-------+
 |       Fanout       | Count |
 +--------------------+-------+
-| Total control sets |    12 |
+| Total control sets |    16 |
 | >= 0 to < 4        |     5 |
-| >= 4 to < 6        |     1 |
-| >= 6 to < 8        |     0 |
+| >= 4 to < 6        |     0 |
+| >= 6 to < 8        |     2 |
 | >= 8 to < 10       |     1 |
-| >= 10 to < 12      |     0 |
+| >= 10 to < 12      |     1 |
 | >= 12 to < 14      |     0 |
 | >= 14 to < 16      |     0 |
-| >= 16              |     5 |
+| >= 16              |     7 |
 +--------------------+-------+
 * Control sets can be remapped at either synth_design or opt_design
 
@@ -58,33 +58,37 @@ Table of Contents
 +--------------+-----------------------+------------------------+-----------------+--------------+
 | Clock Enable | Synchronous Set/Reset | Asynchronous Set/Reset | Total Registers | Total Slices |
 +--------------+-----------------------+------------------------+-----------------+--------------+
-| No           | No                    | No                     |               4 |            4 |
+| No           | No                    | No                     |              16 |            9 |
 | No           | No                    | Yes                    |               0 |            0 |
-| No           | Yes                   | No                     |              52 |           15 |
-| Yes          | No                    | No                     |               1 |            1 |
+| No           | Yes                   | No                     |              86 |           24 |
+| Yes          | No                    | No                     |               7 |            2 |
 | Yes          | No                    | Yes                    |               0 |            0 |
-| Yes          | Yes                   | No                     |             100 |           28 |
+| Yes          | Yes                   | No                     |             116 |           32 |
 +--------------+-----------------------+------------------------+-----------------+--------------+
 
 
 4. Detailed Control Set Information
 -----------------------------------
 
-+----------------------+--------------------------+--------------------------+------------------+----------------+--------------+
-|     Clock Signal     |       Enable Signal      |     Set/Reset Signal     | Slice Load Count | Bel Load Count | Bels / Slice |
-+----------------------+--------------------------+--------------------------+------------------+----------------+--------------+
-|  CLK100MHZ_IBUF_BUFG | clear                    | p_2_out[2]               |                1 |              1 |         1.00 |
-|  CLK100MHZ_IBUF_BUFG | clear                    | p_2_out[1]               |                1 |              1 |         1.00 |
-|  CLK100MHZ_IBUF_BUFG | clear                    | p_2_out[0]               |                1 |              1 |         1.00 |
-|  CLK100MHZ_IBUF_BUFG | r_out_val[1]_i_2_n_0     | r_out_val                |                1 |              1 |         1.00 |
-|  CLK100MHZ_IBUF_BUFG | r_out_val_reg[3]_i_1_n_3 |                          |                1 |              1 |         1.00 |
-|  CLK100MHZ_IBUF_BUFG |                          |                          |                4 |              4 |         1.00 |
-|  CLK100MHZ_IBUF_BUFG |                          | r_out_val_reg[3]_i_1_n_3 |                3 |              9 |         3.00 |
-|  CLK100MHZ_IBUF_BUFG |                          | clear                    |                5 |             18 |         3.60 |
-|  CLK100MHZ_IBUF_BUFG |                          | r_out_val[1]_i_2_n_0     |                7 |             25 |         3.57 |
-|  CLK100MHZ_IBUF_BUFG | i_limits[0][0]_i_2_n_0   | i_limits[0][0]_i_1_n_0   |                8 |             32 |         4.00 |
-|  CLK100MHZ_IBUF_BUFG | i_limits[1][0]_i_2_n_0   | i_limits[1][0]_i_1_n_0   |                8 |             32 |         4.00 |
-|  CLK100MHZ_IBUF_BUFG | i_limits[2][0]_i_2_n_0   | i_limits[2][0]_i_1_n_0   |                8 |             32 |         4.00 |
-+----------------------+--------------------------+--------------------------+------------------+----------------+--------------+
++------------------------+---------------------------+--------------------------------+------------------+----------------+--------------+
+|      Clock Signal      |       Enable Signal       |        Set/Reset Signal        | Slice Load Count | Bel Load Count | Bels / Slice |
++------------------------+---------------------------+--------------------------------+------------------+----------------+--------------+
+|  i_CLK100MHZ_IBUF_BUFG | clear                     | r_rgb_val[2]_i_1_n_0           |                1 |              1 |         1.00 |
+|  i_CLK100MHZ_IBUF_BUFG | clear                     | r_rgb_val[0]_i_1_n_0           |                1 |              1 |         1.00 |
+|  i_CLK100MHZ_IBUF_BUFG | clear                     | r_rgb_val[1]_i_1_n_0           |                1 |              1 |         1.00 |
+|  i_CLK100MHZ_IBUF_BUFG | UART_TX_INST/r_SM_Main[2] |                                |                1 |              1 |         1.00 |
+|  i_CLK100MHZ_IBUF_BUFG | r_out_val[1]_i_2_n_0      | r_out_val[1]_i_1_n_0           |                1 |              1 |         1.00 |
+|  i_CLK100MHZ_IBUF_BUFG | UART_TX_INST/E[0]         | UART_TX_INST/r_TX_DV17_out     |                2 |              6 |         3.00 |
+|  i_CLK100MHZ_IBUF_BUFG | UART_TX_INST/r_TX_Data    |                                |                1 |              6 |         6.00 |
+|  i_CLK100MHZ_IBUF_BUFG |                           | i_limit_counter_reg[0]_i_1_n_3 |                3 |              9 |         3.00 |
+|  i_CLK100MHZ_IBUF_BUFG | UART_TX_INST/r_Clk_Count  | UART_TX_INST/r_Clk_Count0      |                2 |             10 |         5.00 |
+|  i_CLK100MHZ_IBUF_BUFG |                           |                                |                9 |             16 |         1.78 |
+|  i_CLK100MHZ_IBUF_BUFG |                           | clear                          |                5 |             18 |         3.60 |
+|  i_CLK100MHZ_IBUF_BUFG |                           | r_out_val[1]_i_2_n_0           |                7 |             25 |         3.57 |
+|  i_CLK100MHZ_IBUF_BUFG | i_limits[0][0]_i_2_n_0    | i_limits[0][0]_i_1_n_0         |                8 |             32 |         4.00 |
+|  i_CLK100MHZ_IBUF_BUFG | i_limits[1][0]_i_2_n_0    | i_limits[1][0]_i_1_n_0         |                8 |             32 |         4.00 |
+|  i_CLK100MHZ_IBUF_BUFG | i_limits[2][0]_i_2_n_0    | i_limits[2][0]_i_1_n_0         |                8 |             32 |         4.00 |
+|  i_CLK100MHZ_IBUF_BUFG |                           | UART_TX_INST/r_TX_DV17_out     |                9 |             34 |         3.78 |
++------------------------+---------------------------+--------------------------------+------------------+----------------+--------------+
 
 
